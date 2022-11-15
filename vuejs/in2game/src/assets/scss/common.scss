@@ -1,0 +1,67 @@
+#app {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+#loginBack {
+    background-image: url(~@/assets/images/background/login.png);
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+#lobbyBack {
+    background-image: url(~@/assets/images/background/lobby.png);
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+#explainBack {
+    background-image: url(~@/assets/images/background/explain.png);
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+#rankBack {
+    background-image: url(~@/assets/images/background/rank.png);
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+#gameBack {
+    background-image: url(~@/assets/images/background/game.png);
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+#fixed-tool-bar {
+    background-color: transparent;
+    position: fixed;
+    z-index: 2;
+}
+#transparent-card {
+    background-color: transparent;
+}
+#shadow-text {
+    text-shadow: 3px 3px 3px grey;
+}
+#bold-shadow-text {
+    font-weight: bold;
+    text-shadow: 3px 3px 3px grey;
+}
+#oneline-card-container {
+    height: calc(100vh * (0.2 * 1 + 0.025));
+    overflow-y: auto;
+}
+#twoline-card-container {
+    height: calc(100vh * (0.2 * 2 + 0.025));
+    overflow-y: auto;
+}
