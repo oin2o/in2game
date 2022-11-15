@@ -1,7 +1,13 @@
 import request from '@/utils/request'
 
 export default {
-  gamelist: function(state) {
+  isgame: function(gamecode) {
+    return request({
+      url: '/game/' + gamecode,
+      method: 'get',
+    })
+  },
+  gamelistbystate: function(state) {
     return request({
       url: '/game/?state_lte=' + state + '&ordering=-created_at',
       method: 'get',

@@ -1,15 +1,21 @@
 import request from '@/utils/request'
 
 export default {
-  gamerlist: function(game) {
+  isgamer: function(game, user) {
+    return request({
+      url: '/gamer/?game=' + game.gamecode + '&user=' + user.username,
+      method: 'get',
+    })
+  },
+  gamerlistbygame: function(game) {
     return request({
       url: '/gamer/?game=' + game.gamecode,
       method: 'get',
     })
   },
-  isgamer: function(game, user) {
+  gamerlistbyuser: function(user) {
     return request({
-      url: '/gamer/?game=' + game.gamecode + '&user=' + user.username,
+      url: '/gamer/?user=' + user.username,
       method: 'get',
     })
   },

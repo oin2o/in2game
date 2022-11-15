@@ -22,8 +22,8 @@
             <v-card-actions class="pa-0">
               <v-container id="twoline-card-container">
                 <v-row class="justify" dense>
-                  <v-col class="pa-1" cols="3" v-for="(game, index) in game_list" v-bind:key="index">
-                    <GameSection v-bind:game=game @join_game="join_game" />
+                  <v-col class="pa-1" cols="3" v-for="(game, index) in game_list_by_user" v-bind:key="index">
+                    <GameSection v-bind:game=game.game @join_game="join_game" />
                   </v-col>
                 </v-row>
               </v-container>
@@ -59,6 +59,7 @@ export default {
       game_name: "none",
       menu_name: "all",
       game_list: [],
+      game_list_by_user: [],
       max_gamers: { 'dalmuti': 8, 'dixit': 8, 'davinci': 4, 'liar': 8},
     };
   },
@@ -79,9 +80,15 @@ export default {
         // 1.1. 사용자 정보가 없는 경우, 로그인 페이지로 이동한다.
         this.$router.push({ path: '/' });
       }
-      // 2. 상태코드가 게임대기, 게임중, 결과확인(state 코드 2 이하)인 게임 정보를 조회한다.
-      await game_api.gamelist(2).then(response => {
+      // 2. 상태코드가 게임대기(state 코드 0 이하)인 게임 정보를 조회한다.
+      await game_api.gamelistbystate(0).then(response => {
         this.game_list = response.data;
+      }).catch(error => {
+        this.sys_error = true;
+      });
+      // 3. 참가중인 게임 정보를 조회한다.
+      await gamer_api.gamerlistbyuser(JSON.parse(localStorage.getItem("in2game.user"))).then(response => {
+        this.game_list_by_user = response.data;
       }).catch(error => {
         this.sys_error = true;
       });
@@ -131,7 +138,7 @@ export default {
       if (response.data.length == 0) {
         /* 참가인원 체크는 게임입장 후, 참가/관전 여부 선택시에 체크하는 것으로 변경
         // 1.1. 기존 플레이어가 아닌 경우, 참가 가능 인원을 확인한다.
-        response = await gamer_api.gamerlist(game);
+        response = await gamer_api.gamerlistbygame(game);
 
         if (response.data.length < this.max_gamers[game.gamename]) {
           // 1.1.1. 참가 가능한 경우, 플레이어 추가 후, 게임으로 이동한다.
