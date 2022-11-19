@@ -1,9 +1,9 @@
 import request from '@/utils/request'
 
 export default {
-  isgame: function(gamecode) {
+  isgame: function(game) {
     return request({
-      url: '/game/' + gamecode,
+      url: '/game/' + game.gamecode,
       method: 'get',
     })
   },

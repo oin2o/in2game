@@ -61,10 +61,10 @@ export default {
     return {
       user: JSON.parse(localStorage.getItem("in2game.user")),
       menus: [
-        { icon:'nintendo-switch', title:'게임시작', link:'/lobby' },
+        { icon:'nintendo-switch', title:'대기실', link:'/lobby' },
         { icon:'book-open-variant', title:'설명', link:'/explain' },
-        { icon:'trophy-outline', title:'전적', link:'/rank' },
-        { icon:'logout', title:'나가기', link:'/' },
+        //{ icon:'trophy-outline', title:'전적', link:'/rank' },
+        { icon:'logout', title:'LOGOUT', link:'/' },
       ],
     };
   },

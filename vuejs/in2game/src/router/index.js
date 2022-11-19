@@ -76,7 +76,7 @@ const routes = [
   },
   {
     path: '*',
-    redirect: '/login',
+    redirect: '/',
     hidden: true,
   },
 ]

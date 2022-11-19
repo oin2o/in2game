@@ -17,46 +17,13 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <v-dialog v-model="overcrowding" persistent>
-      <v-card>
-        <v-card-title class="text-h6">게임 참가 실패</v-card-title>
-        <v-card-text>더이상 참가할 수 없습니다.(최대 {{ max_gamers[game_name] }}명)</v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary darken-1" text @click="$emit('close_dialog')">확인</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-    <v-dialog v-model="biz_error" persistent>
-      <v-card>
-        <v-card-title class="text-h6">게임 만들기 실패</v-card-title>
-        <v-card-text>일시적인 에러가 발생했습니다.<br>에러가 계속되는 경우, 관리자에게 문의해 주세요.</v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary darken-1" text @click="$emit('close_dialog')">확인</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-    <v-dialog v-model="sys_error" persistent>
-      <v-card>
-        <v-card-title class="text-h6">시스템 에러</v-card-title>
-        <v-card-text>예기치 못한 에러가 발생했습니다.<br>관리자에게 문의해 주세요.</v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary darken-1" text @click="$emit('close_dialog')">확인</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
   </v-main>
 </template>
 <script>
 export default {
   name: 'Dialog',
   props: {
-    biz_error: Boolean,
     cre8_game: Boolean,
-    overcrowding: Boolean,
-    sys_error: Boolean,
     game_name: String,
   },
   data: () => {
@@ -73,7 +40,6 @@ export default {
         { key: 'dalmuti', value: '핸드관리/클라이밍'},{ key: 'dixit', value: '스토리텔링'},
         { key: 'davinci', value: '추리'},{ key: 'liar', value: '블러핑'}
       ],
-      max_gamers: { 'dalmuti': 8, 'dixit': 8, 'davinci': 4, 'liar': 8},
     };
   },
 };

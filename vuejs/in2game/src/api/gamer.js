@@ -9,7 +9,7 @@ export default {
   },
   gamerlistbygame: function(game) {
     return request({
-      url: '/gamer/?game=' + game.gamecode,
+      url: '/gamer/?game=' + game.gamecode + '&ordering=-created_at',
       method: 'get',
     })
   },
