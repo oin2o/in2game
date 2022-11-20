@@ -8,7 +8,7 @@ class Gamer(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     position = models.IntegerField(default=0, help_text="순번")
-    status = models.IntegerField(default=0, help_text="0:게임대기, 1:레디, 2:관전")
+    status = models.IntegerField(default=0, help_text="0:게임대기, 1:관전, 2:레디")
     result = models.IntegerField(default=0, help_text="등수")
 
     def __str__(self):

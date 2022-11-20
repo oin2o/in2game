@@ -9,13 +9,13 @@ export default {
   },
   gamerlistbygame: function(game) {
     return request({
-      url: '/gamer/?game=' + game.gamecode + '&ordering=-created_at',
+      url: '/gamer/?game=' + game.gamecode + '&ordering=-status,position',
       method: 'get',
     })
   },
   gamerlistbyuser: function(user) {
     return request({
-      url: '/gamer/?user=' + user.username,
+      url: '/gamer/?user=' + user.username + '&ordering=-game__created_at',
       method: 'get',
     })
   },

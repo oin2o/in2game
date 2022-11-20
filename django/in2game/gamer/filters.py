@@ -10,6 +10,8 @@ class GamerFilter(FilterSet):
     ordering = OrderingFilter(
         fields=(
             'position',
+            'status',
+            'game__created_at',
         )
     )
     

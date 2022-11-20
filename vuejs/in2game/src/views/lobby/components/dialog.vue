@@ -21,7 +21,7 @@
 </template>
 <script>
 export default {
-  name: 'Dialog',
+  name: 'Lobby Dialog',
   props: {
     cre8_game: Boolean,
     game_name: String,
