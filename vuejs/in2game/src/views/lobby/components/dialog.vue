@@ -1,27 +1,25 @@
 <template>
-  <v-main>
-    <v-dialog v-model="cre8_game" persistent>
-      <v-card>
-        <v-card-title>
-          <span class="text-h6">게임 만들기</span>
-        </v-card-title>
-        <v-card-text>
-          <v-select v-model="game_name" :items="game_names" item-text="value" item-value="key" prepend-icon="mdi-gamepad-variant" append-icon="" dense solo flat readonly></v-select>
-          <v-select v-model="game_name" :items="number_gamers" item-text="value" item-value="key" prepend-icon="mdi-human-queue" append-icon="" dense solo flat readonly></v-select>
-          <v-select v-model="game_name" :items="game_types" item-text="value" item-value="key" prepend-icon="mdi-tag-multiple" append-icon="" dense solo flat readonly></v-select>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="orange darken-1" text @click="$emit('close_dialog')">취소</v-btn>
-          <v-btn color="primary darken-1" text @click="$emit('create_game')">만들기</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </v-main>
+  <v-dialog v-model="cre8_game" persistent>
+    <v-card>
+      <v-card-title>
+        <span class="text-h6">게임 만들기</span>
+      </v-card-title>
+      <v-card-text>
+        <v-select v-model="game_name" :items="game_names" item-text="value" item-value="key" prepend-icon="mdi-gamepad-variant" append-icon="" dense solo flat readonly></v-select>
+        <v-select v-model="game_name" :items="number_gamers" item-text="value" item-value="key" prepend-icon="mdi-human-queue" append-icon="" dense solo flat readonly></v-select>
+        <v-select v-model="game_name" :items="game_types" item-text="value" item-value="key" prepend-icon="mdi-tag-multiple" append-icon="" dense solo flat readonly></v-select>
+      </v-card-text>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn color="orange darken-1" text @click="$emit('close_dialog')">취소</v-btn>
+        <v-btn color="primary darken-1" text @click="$emit('create_game')">만들기</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
 </template>
 <script>
 export default {
-  name: 'Lobby Dialog',
+  name: 'LobbyDialog',
   props: {
     cre8_game: Boolean,
     game_name: String,

@@ -1,7 +1,7 @@
 <template>
   <v-main id="explainBack">
     <MenuSection v-bind:is_chat=is_chat v-bind:menu_name=menu_name @call_back_menu="call_back_menu" />
-    <v-container id="scrolling-app-bar" class="fill-height overflow-y-auto">
+    <v-container id="scrolling-app-bar" class="fill-height overflow-y-auto" fluid>
       <v-row>
         <v-col>
           <v-card v-show="game_name == 'dalmuti'">

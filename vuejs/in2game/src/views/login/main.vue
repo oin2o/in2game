@@ -1,8 +1,8 @@
 <template>
   <v-main id="loginBack">
-    <v-container class="fill-height">
-      <v-row class="fill-height" dense justify="center">
-        <v-col class="mb-12" align-self="end" cols="auto">
+    <v-container class="fill-height" fluid>
+      <v-row class="fill-height justify-center" dense>
+        <v-col class="align-self-end mb-12" cols="auto">
           <v-form v-show="is_hidden">
             <v-container>
               <v-row align="center">

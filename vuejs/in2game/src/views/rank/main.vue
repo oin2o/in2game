@@ -1,7 +1,7 @@
 <template>
   <v-main id="rankBack" class="overflow-y-auto">
     <MenuSection v-bind:is_chat=false v-bind:menu_name=menu_name @call_back_menu="call_back_menu" />
-    <v-container id="scrolling-app-bar" class="fill-height overflow-y-auto">
+    <v-container id="scrolling-app-bar" class="fill-height overflow-y-auto" fluid>
     </v-container>
   </v-main>
 </template>

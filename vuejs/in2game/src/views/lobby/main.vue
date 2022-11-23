@@ -1,7 +1,7 @@
 <template>
   <v-main id="lobbyBack">
     <MenuSection v-bind:is_chat=is_chat v-bind:menu_name=menu_name @call_back_menu="call_back_menu" />
-    <v-container id="scrolling-app-bar" class="fill-height">
+    <v-container id="scrolling-app-bar" class="fill-height" fluid>
       <v-row>
         <v-col cols="auto">
           <v-card color="brown lighten-1" dark>
