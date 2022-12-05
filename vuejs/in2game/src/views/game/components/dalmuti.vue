@@ -1,6 +1,11 @@
 <template>
   <v-container fluid>
-    <v-row>
+    <v-row dense>
+      <v-col cols="auto">
+        <v-text-field v-model="message" dense></v-text-field>
+      </v-col>
+    </v-row>
+    <v-row dense>
       <v-col cols="auto">
         <v-card color="brown lighten-1" dark>
           <v-card-subtitle class="pt-3 pb-0">버튼 & Board 영역</v-card-subtitle>
@@ -34,6 +39,7 @@ export default {
   },
   data: () => {
     return {
+      message: "초기 메시지",
     };
   },
   methods : {

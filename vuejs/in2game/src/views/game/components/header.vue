@@ -1,5 +1,9 @@
 <template>
   <v-main>
+    <v-chip v-show="game.state == 0" class="mr-1" color="white" @click="$emit('exit_game')" style="z-index:2;" label small>
+      <v-icon left small>mdi-exit-run</v-icon>
+      나가기
+    </v-chip>
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
           <v-chip class="mr-1" color="white" v-bind="attrs" v-on="on" style="z-index:2;" label small>

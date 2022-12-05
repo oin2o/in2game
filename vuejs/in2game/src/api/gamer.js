@@ -30,4 +30,10 @@ export default {
       },
     })
   },
+  deletegamer: function(gamer) {
+    return request({
+      url: '/gamer/' + gamer.id,
+      method: 'delete',
+    })
+  },
 }
